@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 	c "github.com/mrtomyum/report/controller"
-	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -12,4 +12,3 @@ func main() {
 	app := c.Router(r)
 	app.Run(":8080")
 }
-
