@@ -12,6 +12,7 @@ const (
 var (
 	sysDB *sqlx.DB
 	reportDB *sqlx.DB
+	mockDB *sqlx.DB
 )
 
 func InitDB(dsn string) *sqlx.DB{
@@ -22,6 +23,8 @@ func InitDB(dsn string) *sqlx.DB{
 func init() {
 	var report = DB_USER + ":" + DB_PASS + "@" + DB_HOST + "/" + "report" + "?parseTime=true"
 	var sys = DB_USER + ":" + DB_PASS + "@" + DB_HOST + "/" + "sys" + "?parseTime=true"
+	var mockReport = DB_USER + ":" + DB_PASS + "@" + DB_HOST + "/" + "report_mock" + "?parseTime=true"
 	reportDB = InitDB(report)
 	sysDB = InitDB(sys)
+	mockDB = InitDB(mockReport)
 }

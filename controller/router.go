@@ -5,11 +5,11 @@ import (
 )
 
 func Router(r *gin.Engine) *gin.Engine{
-	r.GET("/", Home)
+	r.GET("/", ReportIndex)
 	user := r.Group("/user")
 	{
 		user.GET("/", UserIndex)
-		user.GET("/:id", FindReportByUserID)
+		user.GET("/:id", UserFindByName)
 	}
 	return r
 }

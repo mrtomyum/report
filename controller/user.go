@@ -2,9 +2,14 @@ package controller
 
 import (
 	"net/http"
-
 	"github.com/gin-gonic/gin"
 	"github.com/mrtomyum/sys/model"
+)
+
+type UserController struct{}
+
+var (
+	userCtrl = new(UserController)
 )
 
 func UserIndex(c *gin.Context) {
@@ -16,6 +21,6 @@ func UserIndex(c *gin.Context) {
 	c.HTML(http.StatusOK, "user/index.tpl", users)
 }
 
-func FindReportByUserID(c *gin.Context) {
+func (u *UserController) FindByName(c *gin.Context) {
 
 }
